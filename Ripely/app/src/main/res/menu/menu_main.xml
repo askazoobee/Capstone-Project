@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/region_action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_notification"
+        android:orderInCategory="100"
+        android:checkable="true"
+        android:title="@string/notification_action_settings"
+        app:showAsAction="never"
+        android:checked="false"/>
+
+
+</menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="site.ripely"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_ripely_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"
+                    />
+                <category android:name="android.intent.category.LAUNCHER"
+                    />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.ExploreSeasonsActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity"
+                />
+        </activity>
+
+        <activity
+            android:name=".activities.DetailActivity"
+            android:theme="@style/AppTheme.NoActionBar.NoStatusBar"
+            android:configChanges="orientation|screenSize"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity"
+                />
+        </activity>
+
+        <provider
+            android:name=".data.RipelyProvider"
+            android:authorities="site.ripely"
+            android:exported="false"
+            />
+
+        <receiver android:name=".utils.NotificationPublisher" android:process=":remote"/>
+    </application>
+</manifest>

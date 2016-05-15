@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    android:id="@+id/empty_layout_favorites"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:layout_gravity="center"
+    >
+    <ImageView
+        android:id="@+id/empty_favorites_image"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/empty_star"
+        android:layout_marginBottom="48dp"
+        />
+    <TextView
+        android:id="@+id/empty_favorites_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlueGrey"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/favorites_empty_message"
+        />
+    <TextView
+        android:id="@+id/empty_seasons_sub_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlueGrey"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/favorites_empty_sub_message"
+        />
+</LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

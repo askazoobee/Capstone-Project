@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">Ripely</string>
+    <string name="region_action_settings">Region</string>
+    <string name="notification_action_settings">Notifications</string>
+
+    <string name="usda_api_key">"ENTER API KEY HERE"</string>
+
+    <string name="connect_message">"Not internet. Reconnect and try again."</string>
+
+    <string name="region_dialog_title">Select your region:</string>
+    <string name="notification_title">"Produce in season this week!"</string>
+    <string name="search_hint">"Search for produce"</string>
+
+    <string name="favorites_empty_message">"No Favorites yet.."</string>
+    <string name="favorites_empty_sub_message">"Press the favorites button in a produce page to save them here!" </string>
+
+    <string name="whats_ripe"> "What's ripe in %1$s ?"</string>
+
+    <string name="seasons_empty_message">"No Produce in season for this region :( Weather is harsh bro."</string>
+    <string name="seasons_empty_sub_message">"Check back here again in a little while." </string>
+
+    <string name="region_file_key">site.ripely.com.REGION_PREFERENCE_FILE_KEY</string>
+    <string name="saved_region"></string>
+    <string name="default_region">"South"</string>
+
+    <string name="temp_season_file_key">site.ripely.com.TEMP_SEASON_PREFERENCE_FILE_KEY</string>
+    <string name="temp_saved_season"></string>
+    <string name="default_season">"winter"</string>
+
+    <string name="detail_amount_title">Amount</string>
+    <string name="detail_amount_value">100 g</string>
+
+    <string name="detail_calories_title">Calories</string>
+    <string name="detail_calories_value">%1$s kcal</string>
+
+    <string name="detail_total_fat__title">Total Fat</string>
+    <string name="detail_total_fat_value">%1$s g</string>
+
+    <string name="detail_saturated_fat_title">Saturated Fat</string>
+    <string name="detail_saturated_fat_value">%1$s g</string>
+
+    <string name="detail_polyunsaturated_fat_title">Polyunsaturated Fat</string>
+    <string name="detail_polyunsaturated_fat_value">%1$s g</string>
+
+    <string name="detail_monounsaturated_fat_title">Monounsaturated Fat</string>
+    <string name="detail_monounsaturated_fat_value">%1$s g</string>
+
+    <string name="detail_cholesterol_title">Cholesterol</string>
+    <string name="detail_cholesterol_value">%1$s mg</string>
+
+    <string name="detail_sodium_title">Sodium</string>
+    <string name="detail_sodium_value">%1$s mg</string>
+
+    <string name="detail_potassium_title">Potassium</string>
+    <string name="detail_potassium_value">%1$s mg</string>
+
+    <string name="detail_total_carbohydrate_title">Total Carbohydrate</string>
+    <string name="detail_total_carbohydrate_value">%1$s g</string>
+
+    <string name="detail_dietary_fiber_title">Dietary Fiber</string>
+    <string name="detail_dietary_fiber_value">%1$s g</string>
+
+    <string name="detail_sugar_title">Sugar</string>
+    <string name="detail_sugar_value">%1$s g</string>
+
+    <string name="detail_protein_title">Protein</string>
+    <string name="detail_protein_value">%1$s g</string>
+
+    <string name="detail_vitamin_a_title">Vitamin A</string>
+    <string name="detail_vitamin_a_value">%1$s IU</string>
+
+    <string name="detail_calcium_title">Calcium</string>
+    <string name="detail_calcium_value">%1$s mg</string>
+
+    <string name="detail_vitamin_d_title">Vitamin D</string>
+    <string name="detail_vitamin_d_value">%1$s IU</string>
+
+    <string name="detail_vitamin_b12_title">Vitamin B12</string>
+    <string name="detail_vitamin_b12_value">%1$s mg</string>
+
+    <string name="detail_vitamin_c_title">Vitamin C</string>
+    <string name="detail_vitamin_c_value">%1$s mg</string>
+
+    <string name="detail_iron_title">Iron</string>
+    <string name="detail_iron_value">%1$s mg</string>
+
+    <string name="detail_vitamin_b6_title">Vitamin B6</string>
+    <string name="detail_vitamin_b6_value">%1$s mg</string>
+
+    <string name="detail_magnesium_title">Magnesium</string>
+    <string name="detail_magnesium_value">%1$s mg</string>
+
+    <string name="detail_placeholder_value">n/a</string>
+    <string name="detail_placeholder_wiki">Could not load description from Wikipedia. Please try again later.</string>
+
+    <string-array name="search_produce_array">
+        <item>None</item>
+        <item>Apples</item>
+        <item>Artichokes</item>
+        <item>Arugula</item>
+        <item>Asparagus</item>
+        <item>Avocados</item>
+        <item>Beets</item>
+        <item>Bell Peppers</item>
+        <item>Blueberries</item>
+        <item>Broccoli</item>
+        <item>Brussel Sprouts</item>
+        <item>Cabbage</item>
+        <item>Cantaloupes</item>
+        <item>Carrots</item>
+        <item>Cauliflower</item>
+        <item>Celery</item>
+        <item>Chard</item>
+        <item>Cherries</item>
+        <item>Chilis</item>
+        <item>Clementines</item>
+        <item>Collards</item>
+        <item>Corn</item>
+        <item>Cranberries</item>
+        <item>Cucumbers</item>
+        <item>Eggplant</item>
+        <item>Garlic</item>
+        <item>Grapefruit</item>
+        <item>Grapes</item>
+        <item>Green Beans</item>
+        <item>Kale</item>
+        <item>Leeks</item>
+        <item>Lemons</item>
+        <item>Lettuce</item>
+        <item>Limes</item>
+        <item>Mushrooms</item>
+        <item>Nectarines</item>
+        <item>Onions</item>
+        <item>Oranges</item>
+        <item>Parsnips</item>
+        <item>Peaches</item>
+        <item>Pears</item>
+        <item>Plums</item>
+        <item>Pomegranates</item>
+        <item>Potatoes</item>
+        <item>Pumpkins</item>
+        <item>Radishes</item>
+        <item>Raspberries</item>
+        <item>Rhubarb</item>
+        <item>Spinach</item>
+        <item>Strawberries</item>
+        <item>Summer Squash</item>
+        <item>Sweet Potatoes</item>
+        <item>Tangerines</item>
+        <item>Tomatoes</item>
+        <item>Turnips</item>
+        <item>Watermelon</item>
+        <item>Winter Squash</item>
+        <item>Zucchini</item>
+    </string-array>
+
+</resources>
