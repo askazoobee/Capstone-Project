@@ -7,4 +7,6 @@
     <dimen name="detail_title">15sp</dimen>
     <dimen name="detail_value">30sp</dimen>
     <dimen name="detail_value_padding">15dp</dimen>
+    <dimen name="widget_margin">8dp</dimen>
+
 </resources>

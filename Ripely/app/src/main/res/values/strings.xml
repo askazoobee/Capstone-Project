@@ -11,6 +11,8 @@
     <string name="notification_title">"Produce in season this week!"</string>
     <string name="search_hint">"Search for produce"</string>
 
+    <string name="widget_button_text">"What's Ripely now?"</string>
+
     <string name="favorites_empty_message">"No Favorites yet.."</string>
     <string name="favorites_empty_sub_message">"Press the favorites button in a produce page to save them here!" </string>
 
