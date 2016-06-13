@@ -1,12 +1,5 @@
 package site.ripely.network;
 
-
-import java.io.IOException;
-
-
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -24,8 +17,6 @@ public class WikiApiClient {
 
     public static WikiApiInterface getClient() {
         if (wikiApiInterface == null) {
-
-
             Retrofit client = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -35,13 +26,8 @@ public class WikiApiClient {
         return wikiApiInterface;
     }
 
-
     public interface WikiApiInterface {
-
         @GET("page/summary/{title}?redirect=true")
         Call<WikiInfo> getWikiDesc(@Path("title") String name);
-
-
     }
-
 }

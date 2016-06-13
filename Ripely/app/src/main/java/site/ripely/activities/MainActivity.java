@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.main_search_fab);
 
-        if(fab!=null) {
+        if (fab != null) {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -220,15 +220,15 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("PRODUCE_NAME", edtToolSearch.getText().toString());
                         toolbarSearchDialog.dismiss();
                         startActivity(intent);
-                    }else{
+                    } else {
                         Snackbar.make(v, getResources().getText(R.string.connect_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     }
-                }else if (keyCode == KeyEvent.KEYCODE_BACK){
+                } else if (keyCode == KeyEvent.KEYCODE_BACK) {
                     toolbarSearchDialog.dismiss();
                 }
                 return true;
             }
-            });
+        });
     }
 
     @Override
@@ -242,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
         item.setChecked(isChecked);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -253,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             showDialog();
             return true;
-        }else if(id == R.id.action_notification){
+        } else if (id == R.id.action_notification) {
             //check if notification are enabled and update checkbox
             item.setChecked(!item.isChecked());
             SharedPreferences settings = getSharedPreferences("settings", 0);
@@ -261,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("checkbox", item.isChecked());
             editor.apply();
 
-            if(settings.getBoolean("checkbox",item.isChecked())) {
+            if (settings.getBoolean("checkbox", item.isChecked())) {
                 //schedule the notification for a biweekly basis.
                 scheduleNotification(getNotification());
             }
@@ -277,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_whatshot_selector,
             R.drawable.ic_date_range_selector
     };
+
     //set up Tab icons for each tab in tablayout.
     private void setupTabIcons() {
         mtabLayout.getTabAt(0).setIcon(tabIcons[0]);
@@ -290,10 +292,12 @@ public class MainActivity extends AppCompatActivity {
                 R.string.region_dialog_title);
         newFragment.show(getFragmentManager(), "dialog");
     }
+
     public void doPositiveClick() {
         // do nothing yet. Saves entry by selecting by default.
         Log.i("RegionDialog", "Positive click!");
     }
+
     public void doSelection(String s) {
         //Open sharedpref and save region to know which table to use.
         Context context = this;
@@ -305,8 +309,8 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
 
         //test it out
-        String regionName = sharedPref.getString(getString(R.string.saved_region),null);
-        Log.i("RegionDialog log", "saved!"+ regionName);
+        String regionName = sharedPref.getString(getString(R.string.saved_region), null);
+        Log.i("RegionDialog log", "saved!" + regionName);
     }
 
     //use notification and launch broadcast.
@@ -321,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
 
         //Set to remind user to check the app every 14 days.
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY*14, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY * 14, pendingIntent);
     }
 
     //builds notification and then passes to scheduleNotification.
@@ -344,9 +348,9 @@ public class MainActivity extends AppCompatActivity {
         mNotifyCursor = getContentResolver().query(uri, PROJECTION, selectionClause, selectionArgs, null);
         if (mNotifyCursor != null) {
             mNotifyCursor.moveToFirst();
-            while(!mNotifyCursor.isAfterLast()){
+            while (!mNotifyCursor.isAfterLast()) {
                 String pro = mNotifyCursor.getString(mNotifyCursor.getColumnIndex(Utility.getSeason(getApplicationContext(), 0).toLowerCase()));
-                Log.d("produce for notify",pro);
+                Log.d("produce for notify", pro);
                 if (pro.equals("1")) {
                     //1 is the column int
                     mNotifyProduceList.add(mNotifyCursor.getString(1));
@@ -360,11 +364,11 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i <= mNotifyProduceList.size(); i++) {
-            if(i<mNotifyProduceList.size()) {
+            if (i < mNotifyProduceList.size()) {
                 strBuilder.append(mNotifyProduceList.get(i))
                         .append(", ");
-            }else{
-                strBuilder.append(mNotifyProduceList.get(i-1))
+            } else {
+                strBuilder.append(mNotifyProduceList.get(i - 1))
                         .append(".");
             }
         }
@@ -376,7 +380,7 @@ public class MainActivity extends AppCompatActivity {
         //notificationIntent.addFlags(Notification.FLAG_AUTO_CANCEL|Notification.FLAG_ONLY_ALERT_ONCE);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Log.d("notify content log",notification_string);
+        Log.d("notify content log", notification_string);
 
         Notification.Builder builder = new Notification.Builder(this);
 
@@ -398,6 +402,7 @@ public class MainActivity extends AppCompatActivity {
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
+
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
@@ -412,11 +417,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+
         @Override
         public int getCount() {
             // Show 3 total pages.
             return 3;
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             return null;

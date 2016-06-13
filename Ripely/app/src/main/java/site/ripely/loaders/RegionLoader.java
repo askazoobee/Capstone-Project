@@ -7,20 +7,17 @@ import android.support.v4.content.CursorLoader;
 import site.ripely.data.RipelyContract;
 import site.ripely.utils.Utility;
 
-
 /**
  * Helper for loading a list of articles or a single article.
  */
 public class RegionLoader extends CursorLoader {
 
-
-
     public static RegionLoader newAllRegionInstance(Context context, int flag) {
-        return new RegionLoader(context, RipelyContract.RegionEntry.buildDirUri(),flag);
+        return new RegionLoader(context, RipelyContract.RegionEntry.buildDirUri(), flag);
     }
 
     private RegionLoader(Context context, Uri uri, int flag) {
-        super(context, uri, Query.PROJECTION, Utility.getSeason(context,flag) + "=? ", Query.ARGUMENTS, RipelyContract.RegionEntry.DEFAULT_SORT);
+        super(context, uri, Query.PROJECTION, Utility.getSeason(context, flag) + "=? ", Query.ARGUMENTS, RipelyContract.RegionEntry.DEFAULT_SORT);
     }
 
     public interface Query {

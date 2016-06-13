@@ -11,18 +11,14 @@ public class UsdaInfo {
     private Report report;
 
     /**
-     * 
-     * @return
-     *     The report
+     * @return The report
      */
     public Report getReport() {
         return report;
     }
 
     /**
-     * 
-     * @param report
-     *     The report
+     * @param report The report
      */
     public void setReport(Report report) {
         this.report = report;

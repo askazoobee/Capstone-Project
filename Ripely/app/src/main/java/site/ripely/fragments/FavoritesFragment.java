@@ -19,8 +19,7 @@ import site.ripely.R;
 import site.ripely.loaders.FavoritesLoader;
 
 
-
-public class FavoritesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class FavoritesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private final int FAVORITES_LOADER_ID = 1;
     private RecyclerView mRecyclerView;
@@ -52,7 +51,6 @@ public class FavoritesFragment extends Fragment implements LoaderManager.LoaderC
         return rootView;
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -67,14 +65,14 @@ public class FavoritesFragment extends Fragment implements LoaderManager.LoaderC
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        ProduceAdapter adapter = new ProduceAdapter(cursor,getContext(),FAVORITES_LOADER_ID);
+        ProduceAdapter adapter = new ProduceAdapter(cursor, getContext(), FAVORITES_LOADER_ID);
         adapter.setHasStableIds(true);
 
         //if not items then set the empty state for this fragment.
-        if(adapter.getItemCount() == 0){
+        if (adapter.getItemCount() == 0) {
             mRecyclerView.setVisibility(View.INVISIBLE);
             mEmpty.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             mRecyclerView.setAdapter(adapter);
             // int columnCount = getResources().getInteger(R.integer.list_column_count);
             StaggeredGridLayoutManager sglm =
@@ -88,17 +86,16 @@ public class FavoritesFragment extends Fragment implements LoaderManager.LoaderC
         mRecyclerView.setAdapter(null);
     }
 
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static FavoritesFragment newInstance(int sectionNumber) {
-            FavoritesFragment fragment = new FavoritesFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
+    /**
+     * Returns a new instance of this fragment for the given section
+     * number.
+     */
+    public static FavoritesFragment newInstance(int sectionNumber) {
+        FavoritesFragment fragment = new FavoritesFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 }

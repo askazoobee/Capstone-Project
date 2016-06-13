@@ -15,7 +15,7 @@ import site.ripely.activities.MainActivity;
 /**
  * Created by littleBIG on 4/14/2016.
  */
-public class RegionDialogFragment extends DialogFragment{
+public class RegionDialogFragment extends DialogFragment {
 
 
     String[] mRegionArray;
@@ -36,30 +36,30 @@ public class RegionDialogFragment extends DialogFragment{
         SharedPreferences sharedPref = getActivity().getSharedPreferences(getActivity().getString(R.string.region_file_key), getActivity().getApplicationContext().MODE_PRIVATE);
         String region = sharedPref.getString(getActivity().getString(R.string.saved_region), getActivity().getString(R.string.default_region));
 
-        Log.d("region_dialog_log",region);
+        Log.d("region_dialog_log", region);
 
-        switch(region){
-            case "South":{
+        switch (region) {
+            case "South": {
                 loc = 0;
                 break;
             }
-            case "Midwest":{
+            case "Midwest": {
                 loc = 1;
                 break;
             }
-            case "Northeast":{
+            case "Northeast": {
                 loc = 2;
                 break;
             }
-            case "Northwest":{
+            case "Northwest": {
                 loc = 3;
                 break;
             }
-            case "Southwest":{
+            case "Southwest": {
                 loc = 4;
                 break;
             }
-            default:{
+            default: {
                 loc = 3;
                 break;
             }

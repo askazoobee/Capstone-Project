@@ -1,66 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="site.ripely"
-    >
+    package="site.ripely">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_ripely_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
 
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    />
-                <category android:name="android.intent.category.LAUNCHER"
-                    />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".activities.ExploreSeasonsActivity"
-            >
+        <activity android:name=".activities.ExploreSeasonsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity"
-                />
+                android:value=".activities.MainActivity" />
         </activity>
 
         <activity
             android:name=".activities.DetailActivity"
-            android:theme="@style/AppTheme.NoActionBar.NoStatusBar"
             android:configChanges="orientation|screenSize"
-            >
+            android:theme="@style/AppTheme.NoActionBar.NoStatusBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity"
-                />
+                android:value=".activities.MainActivity" />
         </activity>
 
         <provider
             android:name=".data.RipelyProvider"
             android:authorities="site.ripely"
-            android:exported="false"
-            />
+            android:exported="false" />
 
-        <receiver android:name=".utils.NotificationPublisher" android:process=":remote"/>
+        <receiver
+            android:name=".utils.NotificationPublisher"
+            android:process=":remote" />
 
-        <receiver android:name=".widget.RipelyWidgetProvider" >
+        <receiver android:name=".widget.RipelyWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/widget_ripely_info" />
         </receiver>
 

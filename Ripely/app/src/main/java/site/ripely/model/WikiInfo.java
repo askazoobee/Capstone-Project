@@ -15,36 +15,28 @@ public class WikiInfo {
     private String extract;
 
     /**
-     * 
-     * @return
-     *     The title
+     * @return The title
      */
     public String getTitle() {
         return title;
     }
 
     /**
-     * 
-     * @param title
-     *     The title
+     * @param title The title
      */
     public void setTitle(String title) {
         this.title = title;
     }
 
     /**
-     * 
-     * @return
-     *     The extract
+     * @return The extract
      */
     public String getExtract() {
         return extract;
     }
 
     /**
-     * 
-     * @param extract
-     *     The extract
+     * @param extract The extract
      */
     public void setExtract(String extract) {
         this.extract = extract;

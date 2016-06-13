@@ -17,7 +17,7 @@ import site.ripely.adapters.SimpleExploreAdapter;
 import site.ripely.adapters.ProduceAdapter;
 import site.ripely.loaders.RegionLoader;
 
-public class ExploreSeasonsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+public class ExploreSeasonsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     //we use the same loader as SeasonsFragment but specify season based on user selection not time of year with flag.
     private final int REGION_LOADER_ID = 0;
@@ -33,7 +33,7 @@ public class ExploreSeasonsActivity extends AppCompatActivity implements LoaderM
         Intent intent = getIntent();
         String s = intent.getStringExtra(SimpleExploreAdapter.EXTRA_MESSAGE);
 
-        setTitle(String.format(getResources().getString(R.string.whats_ripe),s.toLowerCase()));
+        setTitle(String.format(getResources().getString(R.string.whats_ripe), s.toLowerCase()));
 
         Context context = this;
         SharedPreferences sharedPref = context.getSharedPreferences(
@@ -43,8 +43,8 @@ public class ExploreSeasonsActivity extends AppCompatActivity implements LoaderM
         editor.putString(getString(R.string.temp_saved_season), s);
         editor.apply();
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.explore_seasons_recycler_view);
-        getSupportLoaderManager().initLoader(REGION_LOADER_ID, null,this);
+        mRecyclerView = (RecyclerView) findViewById(R.id.explore_seasons_recycler_view);
+        getSupportLoaderManager().initLoader(REGION_LOADER_ID, null, this);
 
     }
 
@@ -61,7 +61,7 @@ public class ExploreSeasonsActivity extends AppCompatActivity implements LoaderM
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        ProduceAdapter adapter = new ProduceAdapter(cursor,getApplicationContext(),REGION_LOADER_ID);
+        ProduceAdapter adapter = new ProduceAdapter(cursor, getApplicationContext(), REGION_LOADER_ID);
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);
         StaggeredGridLayoutManager sglm =

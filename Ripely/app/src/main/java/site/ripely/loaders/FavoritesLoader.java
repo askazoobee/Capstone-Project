@@ -1,27 +1,24 @@
 package site.ripely.loaders;
 
 
- import android.content.Context;
+import android.content.Context;
 
- import android.net.Uri;
- import android.support.v4.content.CursorLoader;
+import android.net.Uri;
+import android.support.v4.content.CursorLoader;
 
- import site.ripely.data.RipelyContract;
-
+import site.ripely.data.RipelyContract;
 
 /**
  * Helper for loading a list of articles or a single article.
  */
 public class FavoritesLoader extends CursorLoader {
 
-
-
     public static FavoritesLoader newAllProduceInstance(Context context) {
         return new FavoritesLoader(context, RipelyContract.ProduceEntry.buildDirUri());
     }
 
     private FavoritesLoader(Context context, Uri uri) {
-        super(context, uri, Query.PROJECTION,RipelyContract.ProduceEntry.COLLUMN_FAVORITE + " =? ", Query.ARGUMENTS, RipelyContract.ProduceEntry.DEFAULT_SORT);
+        super(context, uri, Query.PROJECTION, RipelyContract.ProduceEntry.COLLUMN_FAVORITE + " =? ", Query.ARGUMENTS, RipelyContract.ProduceEntry.DEFAULT_SORT);
     }
 
     public interface Query {

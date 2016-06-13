@@ -15,7 +15,7 @@ import site.ripely.adapters.SimpleExploreAdapter;
  * A simple {@link Fragment} subclass.
  */
 
-public class ExploreFragment extends Fragment{
+public class ExploreFragment extends Fragment {
 
     private String[] mDataset;
     private String[] mImageset;
@@ -64,7 +64,7 @@ public class ExploreFragment extends Fragment{
                         GridLayoutManager.VERTICAL, false));
 
         // specify an adapter (see also next example)
-        mAdapter = new SimpleExploreAdapter(mDataset,mImageset, getContext());
+        mAdapter = new SimpleExploreAdapter(mDataset, mImageset, getContext());
         mRecyclerView.setAdapter(mAdapter);
 
         return rootView;

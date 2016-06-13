@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/parent_toolbar_search"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/trans_black_25"
     android:orientation="vertical">
 
-    <include layout="@layout/include_toolbar_search"/>
+    <include layout="@layout/include_toolbar_search" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
-        android:background="@color/chrome_grey"/>
+        android:background="@color/chrome_grey" />
 
 
     <ListView
@@ -20,18 +19,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:scrollbars="vertical"
         android:divider="@android:color/transparent"
-        android:visibility="gone"/>
+        android:scrollbars="vertical"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/txt_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/secondary_text"
         android:background="@color/white"
-        android:padding="20dp"
         android:gravity="center"
-        android:visibility="gone"/>
+        android:padding="20dp"
+        android:textColor="@color/secondary_text"
+        android:visibility="gone" />
 
 </LinearLayout>

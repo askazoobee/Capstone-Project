@@ -1,7 +1,6 @@
 package site.ripely.fragments;
 
 
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,7 +23,7 @@ import site.ripely.loaders.RegionLoader;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private String[] mDataset;
     private final int REGION_LOADER_ID = 0;
@@ -35,7 +34,6 @@ public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCal
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
-
 
     public SeasonsFragment() {
         // Required empty public constructor
@@ -51,7 +49,7 @@ public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCal
         mDataset[1] = "two";
         mDataset[2] = "three";
 
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.seasons_recycler_view);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.seasons_recycler_view);
         getLoaderManager().initLoader(REGION_LOADER_ID, null, this);
         return rootView;
     }
@@ -65,7 +63,7 @@ public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCal
     @Override
     public void onPause() {
         super.onPause();
-       getLoaderManager().restartLoader(REGION_LOADER_ID, null, this);
+        getLoaderManager().restartLoader(REGION_LOADER_ID, null, this);
     }
 
     @Override
@@ -76,11 +74,11 @@ public class SeasonsFragment extends Fragment implements LoaderManager.LoaderCal
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
 
-        ProduceAdapter adapter = new ProduceAdapter(cursor,getContext(),REGION_LOADER_ID);
+        ProduceAdapter adapter = new ProduceAdapter(cursor, getContext(), REGION_LOADER_ID);
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);
 
-       // int columnCount = getResources().getInteger(R.integer.list_column_count);
+        // int columnCount = getResources().getInteger(R.integer.list_column_count);
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(sglm);

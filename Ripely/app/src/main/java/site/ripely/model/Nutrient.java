@@ -25,90 +25,70 @@ public class Nutrient {
     private String value;
 
     /**
-     * 
-     * @return
-     *     The nutrientId
+     * @return The nutrientId
      */
     public String getNutrientId() {
         return nutrientId;
     }
 
     /**
-     * 
-     * @param nutrientId
-     *     The nutrient_id
+     * @param nutrientId The nutrient_id
      */
     public void setNutrientId(String nutrientId) {
         this.nutrientId = nutrientId;
     }
 
     /**
-     * 
-     * @return
-     *     The name
+     * @return The name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 
-     * @param name
-     *     The name
+     * @param name The name
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 
-     * @return
-     *     The group
+     * @return The group
      */
     public String getGroup() {
         return group;
     }
 
     /**
-     * 
-     * @param group
-     *     The group
+     * @param group The group
      */
     public void setGroup(String group) {
         this.group = group;
     }
 
     /**
-     * 
-     * @return
-     *     The unit
+     * @return The unit
      */
     public String getUnit() {
         return unit;
     }
 
     /**
-     * 
-     * @param unit
-     *     The unit
+     * @param unit The unit
      */
     public void setUnit(String unit) {
         this.unit = unit;
     }
 
     /**
-     * 
-     * @return
-     *     The value
+     * @return The value
      */
     public String getValue() {
         return value;
     }
 
     /**
-     * 
-     * @param value
-     *     The value
+     * @param value The value
      */
     public void setValue(String value) {
         this.value = value;

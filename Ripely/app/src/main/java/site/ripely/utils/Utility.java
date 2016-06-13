@@ -18,11 +18,8 @@ import site.ripely.data.RipelyContract;
  */
 public class Utility {
 
-
     public static final String PREFS_NAME = "SITE.RIPELY.SEARCH";
-
     public static final String KEY_COUNTRIES = "PRODUCE";
-
     public static final int REQUEST_CODE = 1234;
 
     //used in SearchProduceDialog.
@@ -67,7 +64,7 @@ public class Utility {
             SharedPreferences sharedPref;
             sharedPref = c.getApplicationContext().getSharedPreferences(c.getString(R.string.temp_season_file_key), c.getApplicationContext().MODE_PRIVATE);
             return sharedPref.getString(c.getString(R.string.temp_saved_season).toLowerCase(), c.getString(R.string.default_season));
-        }else{
+        } else {
             Calendar rightNow = Calendar.getInstance();
             int i = rightNow.get(Calendar.MONTH);
             if (i == 12 || i == 1 || i == 2) {
@@ -86,9 +83,9 @@ public class Utility {
     }
 
     //check internet before making network calls.
-    public static boolean isConnectedNetwork (Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService (Context.CONNECTIVITY_SERVICE);
-        return cm.getActiveNetworkInfo () != null && cm.getActiveNetworkInfo ().isConnectedOrConnecting ();
+    public static boolean isConnectedNetwork(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 
 

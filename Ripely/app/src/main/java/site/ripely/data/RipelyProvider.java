@@ -17,7 +17,7 @@ import java.util.List;
 import site.ripely.utils.SelectionBuilder;
 import site.ripely.utils.Utility;
 
-public class RipelyProvider extends ContentProvider{
+public class RipelyProvider extends ContentProvider {
 
 
     private SQLiteOpenHelper mOpenHelper;
@@ -81,7 +81,8 @@ public class RipelyProvider extends ContentProvider{
                     cursor.setNotificationUri(getContext().getContentResolver(), uri);
                 }
                 break;
-            } case REGION: {
+            }
+            case REGION: {
                 cursor = builder.where(selection, selectionArgs).query(db, projection, sortOrder);
                 if (cursor != null) {
                     cursor.setNotificationUri(getContext().getContentResolver(), uri);
@@ -139,7 +140,7 @@ public class RipelyProvider extends ContentProvider{
         //get the region table from the utils class.
         String REGION_TABLE = Utility.getRegion(getContext());
 
-    switch (match) {
+        switch (match) {
             case PRODUCE: {
                 return builder.table(Tables.PRODUCE_TABLE);
             }
@@ -182,10 +183,6 @@ public class RipelyProvider extends ContentProvider{
             db.endTransaction();
         }
     }
-
-
-
-
 
 
 }

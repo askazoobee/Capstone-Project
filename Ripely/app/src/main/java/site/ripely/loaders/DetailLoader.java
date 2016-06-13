@@ -3,7 +3,6 @@ package site.ripely.loaders;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.content.CursorLoader;
-
 import site.ripely.data.RipelyContract;
 
 /**
@@ -16,7 +15,7 @@ public class DetailLoader extends CursorLoader {
     }
 
     private DetailLoader(Context context, Uri uri, String s) {
-        super(context, uri, Query.PROJECTION,RipelyContract.ProduceEntry.COLLUMN_PRODUCE_NAME + " LIKE '%" + s + "%'", null, RipelyContract.ProduceEntry.DEFAULT_SORT);
+        super(context, uri, Query.PROJECTION, RipelyContract.ProduceEntry.COLLUMN_PRODUCE_NAME + " LIKE '%" + s + "%'", null, RipelyContract.ProduceEntry.DEFAULT_SORT);
     }
 
     public interface Query {

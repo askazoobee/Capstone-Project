@@ -20,54 +20,42 @@ public class Food {
     private List<Nutrient> nutrients = new ArrayList<Nutrient>();
 
     /**
-     * 
-     * @return
-     *     The ndbno
+     * @return The ndbno
      */
     public String getNdbno() {
         return ndbno;
     }
 
     /**
-     * 
-     * @param ndbno
-     *     The ndbno
+     * @param ndbno The ndbno
      */
     public void setNdbno(String ndbno) {
         this.ndbno = ndbno;
     }
 
     /**
-     * 
-     * @return
-     *     The name
+     * @return The name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 
-     * @param name
-     *     The name
+     * @param name The name
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 
-     * @return
-     *     The nutrients
+     * @return The nutrients
      */
     public List<Nutrient> getNutrients() {
         return nutrients;
     }
 
     /**
-     * 
-     * @param nutrients
-     *     The nutrients
+     * @param nutrients The nutrients
      */
     public void setNutrients(List<Nutrient> nutrients) {
         this.nutrients = nutrients;

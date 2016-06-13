@@ -5,41 +5,38 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
-    android:fitsSystemWindows="true"
     android:background="@color/colorLightBackground"
-    >
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/main_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        >
+        android:theme="@style/AppTheme.AppBarOverlay">
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/main_collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="128dp"
             android:layout_gravity="top"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:contentScrim="?attr/colorPrimary"
-            app:titleEnabled="false"
-            >
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleEnabled="false">
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/main_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                />
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/main_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_gravity="bottom"
-                app:tabGravity="fill"
-                />
+                app:tabGravity="fill" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -47,17 +44,15 @@
         android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/main_search_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
         android:layout_gravity="end|bottom"
-        app:layout_scrollFlags="scroll"
+        android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_search_white_48dp"
-        />
+        app:layout_scrollFlags="scroll" />
 
 </android.support.design.widget.CoordinatorLayout>

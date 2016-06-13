@@ -4,7 +4,6 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 import site.ripely.model.UsdaInfo;
 
@@ -19,8 +18,6 @@ public class UsdaApiClient {
 
     public static UsdaApiInterface getClient() {
         if (usdaApiInterface == null) {
-
-
             Retrofit client = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -30,7 +27,6 @@ public class UsdaApiClient {
         return usdaApiInterface;
     }
 
-
     public interface UsdaApiInterface {
         @GET("ndb/reports")
         Call<UsdaInfo> getUsdaNutrients(@Query("ndbno") String number,
@@ -38,6 +34,4 @@ public class UsdaApiClient {
                                         @Query("format") String format,
                                         @Query("api_key") String key);
     }
-
-
 }

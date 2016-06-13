@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
 import site.ripely.R;
 import site.ripely.activities.DetailActivity;
 import site.ripely.loaders.DetailLoader;
@@ -20,7 +21,7 @@ import site.ripely.loaders.RegionLoader;
 import site.ripely.utils.Utility;
 
 
-public class ProduceAdapter extends RecyclerView.Adapter<ProduceAdapter.ViewHolder>{
+public class ProduceAdapter extends RecyclerView.Adapter<ProduceAdapter.ViewHolder> {
     private Cursor mCursor;
     private Context mContext;
     private int mFlag;
@@ -35,7 +36,7 @@ public class ProduceAdapter extends RecyclerView.Adapter<ProduceAdapter.ViewHold
     @Override
     public long getItemId(int position) {
         mCursor.moveToPosition(position);
-        switch(mFlag){
+        switch (mFlag) {
             case 0:
                 return mCursor.getLong(RegionLoader.Query._ID);
             case 1:
@@ -55,21 +56,21 @@ public class ProduceAdapter extends RecyclerView.Adapter<ProduceAdapter.ViewHold
         final ViewHolder vh = new ViewHolder(view);
 
         view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-                        //check first if device is connected or is connecting.
-                        if (Utility.isConnectedNetwork(mContext)) {
-                            Intent intent = new Intent(mContext, DetailActivity.class);
-                            mCursor.moveToPosition(vh.getAdapterPosition());
-                            intent.putExtra("PRODUCE_NAME", mCursor.getString(DetailLoader.Query.PRODUCE_NAME));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            mContext.startActivity(intent);
-                        }else{
-                            Snackbar.make(view, mContext.getResources().getText(R.string.connect_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                        }
-                    }
-                });
+                //check first if device is connected or is connecting.
+                if (Utility.isConnectedNetwork(mContext)) {
+                    Intent intent = new Intent(mContext, DetailActivity.class);
+                    mCursor.moveToPosition(vh.getAdapterPosition());
+                    intent.putExtra("PRODUCE_NAME", mCursor.getString(DetailLoader.Query.PRODUCE_NAME));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    mContext.startActivity(intent);
+                } else {
+                    Snackbar.make(view, mContext.getResources().getText(R.string.connect_message), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
+            }
+        });
         return vh;
 
     }
@@ -77,26 +78,26 @@ public class ProduceAdapter extends RecyclerView.Adapter<ProduceAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         mCursor.moveToPosition(position);
-            switch (mFlag) {
-                case 0:
-                    holder.titleView.setText(mCursor.getString(RegionLoader.Query.PRODUCE_NAME));
-                    holder.titleView.setContentDescription(mCursor.getString(RegionLoader.Query.PRODUCE_NAME));
-                    Picasso.with(mContext)
-                            .load(mContext.getResources().getIdentifier(mCursor.getString(RegionLoader.Query.IMAGE_NAME), "drawable", mContext.getPackageName()))
-                            .resize(200, 200)//make it less memory intensive..
-                            .into(holder.imageView);
-                    break;
-                case 1:
-                    holder.titleView.setText(mCursor.getString(FavoritesLoader.Query.PRODUCE_NAME));
-                    holder.titleView.setContentDescription(mCursor.getString(FavoritesLoader.Query.PRODUCE_NAME));
-                    Picasso.with(mContext)
-                            .load(mContext.getResources().getIdentifier(mCursor.getString(FavoritesLoader.Query.IMAGE_NAME), "drawable", mContext.getPackageName()))
-                            .resize(200, 200)//make it less memory intensive..
-                            .into(holder.imageView);
-                    break;
-        default:
-            throw new UnsupportedOperationException("Unknown");
-            }
+        switch (mFlag) {
+            case 0:
+                holder.titleView.setText(mCursor.getString(RegionLoader.Query.PRODUCE_NAME));
+                holder.titleView.setContentDescription(mCursor.getString(RegionLoader.Query.PRODUCE_NAME));
+                Picasso.with(mContext)
+                        .load(mContext.getResources().getIdentifier(mCursor.getString(RegionLoader.Query.IMAGE_NAME), "drawable", mContext.getPackageName()))
+                        .resize(200, 200)//make it less memory intensive..
+                        .into(holder.imageView);
+                break;
+            case 1:
+                holder.titleView.setText(mCursor.getString(FavoritesLoader.Query.PRODUCE_NAME));
+                holder.titleView.setContentDescription(mCursor.getString(FavoritesLoader.Query.PRODUCE_NAME));
+                Picasso.with(mContext)
+                        .load(mContext.getResources().getIdentifier(mCursor.getString(FavoritesLoader.Query.IMAGE_NAME), "drawable", mContext.getPackageName()))
+                        .resize(200, 200)//make it less memory intensive..
+                        .into(holder.imageView);
+                break;
+            default:
+                throw new UnsupportedOperationException("Unknown");
+        }
     }
 
     @Override

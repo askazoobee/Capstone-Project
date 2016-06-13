@@ -17,7 +17,7 @@ import site.ripely.R;
  * Created by littleBIG on 5/14/2016.
  * https://android-arsenal.com/details/1/2589
  */
-public class SearchAdapter extends BaseAdapter{
+public class SearchAdapter extends BaseAdapter {
 
     private Context mContext;
     private ArrayList<String> mProduceList;
@@ -33,7 +33,7 @@ public class SearchAdapter extends BaseAdapter{
     public void updateList(ArrayList<String> filterList, boolean isFilterList) {
         this.mProduceList = filterList;
         this.mIsFilterList = isFilterList;
-        notifyDataSetChanged ();
+        notifyDataSetChanged();
     }
 
     @Override
@@ -55,41 +55,41 @@ public class SearchAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         ViewHolder holder;
-        if(v==null){
+        if (v == null) {
 
             holder = new ViewHolder();
 
             mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             v = mLayoutInflater.inflate(R.layout.list_item_search, parent, false);
-            holder.mProduceView = (TextView)v.findViewById(R.id.txt_produce);
+            holder.mProduceView = (TextView) v.findViewById(R.id.txt_produce);
             v.setTag(holder);
-        } else{
+        } else {
 
             holder = (ViewHolder) v.getTag();
         }
 
         holder.mProduceView.setText(mProduceList.get(position));
 
-        Drawable searchDrawable,recentDrawable;
+        Drawable searchDrawable, recentDrawable;
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             searchDrawable = mContext.getResources().getDrawable(R.drawable.ic_magnify_grey600_24dp, null);
             recentDrawable = mContext.getResources().getDrawable(R.drawable.ic_backup_restore_grey600_24dp, null);
-        }else {
+        } else {
             searchDrawable = mContext.getResources().getDrawable(R.drawable.ic_magnify_grey600_24dp);
             recentDrawable = mContext.getResources().getDrawable(R.drawable.ic_backup_restore_grey600_24dp);
         }
 
-        if(mIsFilterList) {
+        if (mIsFilterList) {
             holder.mProduceView.setCompoundDrawablesWithIntrinsicBounds(searchDrawable, null, null, null);
-        }else {
+        } else {
             holder.mProduceView.setCompoundDrawablesWithIntrinsicBounds(recentDrawable, null, null, null);
         }
         return v;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         TextView mProduceView;
     }
 
