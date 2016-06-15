@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="site.ripely">
+    package="tech.beesknees.ripely">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="tech.beesknees.ripely.activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,31 +23,31 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ExploreSeasonsActivity">
+        <activity android:name="tech.beesknees.ripely.activities.ExploreSeasonsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value="tech.beesknees.ripely.activities.MainActivity" />
         </activity>
 
         <activity
-            android:name=".activities.DetailActivity"
+            android:name="tech.beesknees.ripely.activities.DetailActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar.NoStatusBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value="tech.beesknees.ripely.activities.MainActivity" />
         </activity>
 
         <provider
-            android:name=".data.RipelyProvider"
-            android:authorities="site.ripely"
+            android:name="tech.beesknees.ripely.data.RipelyProvider"
+            android:authorities="tech.beesknees.ripely"
             android:exported="false" />
 
         <receiver
-            android:name=".utils.NotificationPublisher"
+            android:name="tech.beesknees.ripely.utils.NotificationPublisher"
             android:process=":remote" />
 
-        <receiver android:name=".widget.RipelyWidgetProvider">
+        <receiver android:name="tech.beesknees.ripely.widget.RipelyWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
